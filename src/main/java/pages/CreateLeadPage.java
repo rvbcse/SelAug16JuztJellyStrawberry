@@ -8,10 +8,11 @@ import wrappers.OpentapsWrappers;
 
 public class CreateLeadPage extends OpentapsWrappers {
 
-	public CreateLeadPage(RemoteWebDriver driver, ExtentTest test){
+	public CreateLeadPage(RemoteWebDriver driver, ExtentTest test) throws InterruptedException{
 		this.driver = driver; 
 		this.test = test;
-		if(!verifyTitle("Create Lead | opentaps CRM")){
+		Thread.sleep(5000);
+				if(!verifyTitle("Create Lead | opentaps CRM")){
 			reportStep("This is not Create Lead Page. Look at the SnapShot", "FAIL");
 		}
 	}
@@ -37,7 +38,16 @@ public class CreateLeadPage extends OpentapsWrappers {
 		return new ViewLeadPage(driver,test);
 	}
 	
-	
+	public CreateLeadPage selectIndustry(String data)
+	{
+		selectVisibileTextById(prop.getProperty("CreteLead.Industry.Id"),data);
+		return this;
+	}
+	public CreateLeadPage selectOwnership(String odata)
+	{
+		selectVisibileTextById(prop.getProperty("CreateLead.Ownship.Id"),odata);
+		return this;
+	}
 
 
 
