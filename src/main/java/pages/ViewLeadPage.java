@@ -16,29 +16,30 @@ public class ViewLeadPage extends OpentapsWrappers {
 		}
 	}
 
-
+	public ViewLeadPage readFirstName()
+	{
+		getTextById(prop.getProperty("ViewLead.Fname.Id"));
+		return this;
+	}
+	public ViewLeadPage readSources()
+	{
+		getTextById(prop.getProperty("ViewLead.Source.Id"));
+		return this;
+	}
+	public ViewLeadPage readMarketingCampaign()
+	{
+		getTextById(prop.getProperty("ViewLead.MCampaign.Id"));
+		return this;
+	}
+	public EditLeadPage Edit()
+	{
+		clickByLink(prop.getProperty("ViewLead.Edit.Link"));
+		return new EditLeadPage(driver,test);
+	}
+	public DeleteLeadPage Delete()
+	{
+		clickByLink(prop.getProperty("ViewLead.Delete.Link"));
+		return new DeleteLeadPage(driver,test);
+	}
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
