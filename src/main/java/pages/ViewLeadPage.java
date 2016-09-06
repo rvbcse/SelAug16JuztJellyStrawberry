@@ -8,7 +8,6 @@ import wrappers.OpentapsWrappers;
 
 public class ViewLeadPage extends OpentapsWrappers {
 
-		int i;
 	public ViewLeadPage(RemoteWebDriver driver, ExtentTest test){
 		this.driver = driver; 
 		this.test = test;
