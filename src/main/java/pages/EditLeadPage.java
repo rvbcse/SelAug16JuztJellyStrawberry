@@ -27,8 +27,8 @@ public class EditLeadPage extends OpentapsWrappers {
 		return this;
 	}
 	
-	public EditLeadPage selectSource(String data) throws InterruptedException{
-		selectVisibileTextById(prop.getProperty("EditLead.SelectSource.Id"),data); //addDataSourceForm_dataSourceId
+	public EditLeadPage selectSource(String data1) throws InterruptedException{
+		selectVisibileTextById(prop.getProperty("EditLead.SelectSource.Id"),data1); //addDataSourceForm_dataSourceId
 		Thread.sleep(10000);
 		return this;
 	}
