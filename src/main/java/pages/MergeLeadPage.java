@@ -12,24 +12,18 @@ public class MergeLeadPage extends OpentapsWrappers {
 		this.test = test;
 		Thread.sleep(5000);
 	}
-	public void clickMergeLeads()
-	{
-		clickByLink(prop.getProperty("Merge Leads"));
-	}
-	
+
+	public FindMergeLeadPage moveLastWindow() throws InterruptedException{
+		switchToLastWindow();
+		return new FindMergeLeadPage(driver, test);
+		}
 	public void fromlead() {
 		clickByXpath(prop.getProperty("MergeLead.fromlead.Xpath"));
-		//switchToLastWindow();
-		//clickByXpath(prop.getProperty(("MergeLead.firstlead.Xpath")));
-		//switchToParentWindow();
 
 	}
 	
 	public void tolead() {
 		clickByXpath(prop.getProperty("MergeLead.tolead.Xpath"));
-		//switchToLastWindow();
-		//clickByXpath(prop.getProperty(("MergeLead.secondlead.Xpath")));
-		//switchToParentWindow();
 	}
 	
 	public void clickMergeButton(){
