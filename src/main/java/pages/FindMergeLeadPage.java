@@ -9,37 +9,30 @@ public class FindMergeLeadPage extends OpentapsWrappers {
 		this.driver = driver; 
 		this.test = test;
 	}
-public FindMergeLeadPage moveToLastWindow()
+public FindMergeLeadPage moveToLastWindow() throws InterruptedException
 {
+	Thread.sleep(10000);
 	switchToLastWindow();
+	Thread.sleep(5000);
 	return this;
 	
 }
-public MergeLeadPage clickfromLead(String fromname) throws InterruptedException
+public FindMergeLeadPage clickLead(String fromname) throws InterruptedException
 {
+	Thread.sleep(5000);
 	enterByName(prop.getProperty("FindMergeLead.Firstname.Name"), fromname);
+	Thread.sleep(5000);
 	clickByXpath(prop.getProperty("FindMergeLead.FindLeadButton.Xpath"));
-	switchToLastWindow();
-	return new MergeLeadPage(driver,test);
+	Thread.sleep(5000);
+	clickByXpath(prop.getProperty("FindMergeLead.FirstResultingLead.Xpath"));
+	return this;
 }
-
-public MergeLeadPage clicktoLead(String toname) throws InterruptedException
+public MergeLeadPage moveToParentWindow() throws InterruptedException
 {
-	enterByName(prop.getProperty("FindMergeLead.Firstname.Name"), toname);
-	clickByXpath(prop.getProperty("FindMergeLead.FindLeadButton.Xpath"));
-	switchToLastWindow();
-	return new MergeLeadPage(driver,test);
+	Thread.sleep(5000);
+	switchToParentWindow();
+	return new MergeLeadPage(driver, test);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
